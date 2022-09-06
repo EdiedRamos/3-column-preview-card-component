@@ -1,0 +1,113 @@
+@import "_colors";
+@import "_fonts";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $lexend-deca;
+  color: $transparent-white;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.button-base {
+  border: 2px solid $very-light-gray;
+  background-color: $very-light-gray;
+  border-radius: 3rem;
+  padding: 8px;
+  width: 55%;
+  margin-top: 3rem;
+}
+
+.button-base:hover {
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $very-light-gray;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.cards-container {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  
+  h1 {
+    font-family: $big-shoulder;
+    color: $very-light-gray;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+  }
+  
+  article {
+    padding: 2.5rem;
+    height: 450px;
+    width: 300px;
+  }
+  
+  .sedans {
+    background-color: $bright-orange;
+    border-radius: 8px 8px 0 0;
+    
+    button {
+      @extend .button-base;
+      color: $bright-orange;
+    }
+    button:hover {
+      background-color: inherit;
+      color: $very-light-gray;
+    }
+  }
+  
+  .suvs {
+    background-color: $dark-cyan;
+    
+    button {
+      @extend .button-base;
+      color: $dark-cyan;
+    }
+    button:hover {
+      background-color: inherit;
+      color: $very-light-gray;
+    }
+  }
+  
+  .luxury {
+    background-color: $very-dark-cyan;
+    border-radius: 0 0 8px 8px;
+    
+    button {
+      @extend .button-base;
+      color: $very-dark-cyan;
+    }
+    button:hover {
+      background-color: inherit;
+      color: $very-light-gray;
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  .cards-container {
+    flex-direction: row;
+    max-width: 1120px;
+    
+    
+    .sedans {
+      border-radius: 8px 0 0 8px;
+    }
+    
+    .luxury {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+}
